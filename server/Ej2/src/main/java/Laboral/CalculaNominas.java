@@ -24,7 +24,8 @@ public class CalculaNominas {
             System.out.println("Despues de modificacion: ");
             escribe(empleado, empleado1, no);
             calc.readText("empleados.txt");
-            conexion.getConexion();
+            actualizarTxt();
+            //conexion.getConexion();
 
         }catch (DatosNoCorrectosException e){
             System.out.println(e.getMessage());
@@ -56,6 +57,21 @@ public class CalculaNominas {
         System.out.println("Nomina empleado 1: " + no.sueldo(empleado));
         empleado1.Imprimir();
         System.out.println("Nomina empleado 2: " + no.sueldo(empleado1));
+
+    }
+
+    public static void actualizarTxt(){
+
+        try{
+
+            FileWriter fw = new FileWriter("empleados.txt");
+            fw.write("pedro");
+            fw.write(" luis");
+            fw.close();
+            System.out.println("Actualizado");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }
