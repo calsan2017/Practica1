@@ -1,0 +1,2 @@
+James Cosling”, dni=32000032G, sexo=’M’, categoría=9,años=7
+Ada Lovelace”, dni=32000031R, sexo=’F’años=1

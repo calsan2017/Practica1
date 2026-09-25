@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Laboral.conexion;
+package Laboral;
 
 import java.sql.*;
 
@@ -13,11 +13,11 @@ import java.sql.*;
  * @author Usuario25
  */
 public class conexion {
-    
-     private static final String URL      = "jdbc:mariadb://localhost:3306/gestion_nominas";
+
+     private static final String URL      = "jdbc:mariadb://localhost:3306/company/gestion_nominas";
     private static final String USUARIO  = "root";
     private static final String PASSWORD = "123456";
-    
+
   //  private static  String;
     private static Connection conexion = null;
 
@@ -36,7 +36,7 @@ public class conexion {
         }
         return conexion;
     }
-    
+
     /**
      * Cierra la conexión activa.
      */
@@ -50,5 +50,5 @@ public class conexion {
             System.err.println("Error al cerrar la conexión: " + e.getMessage());
         }
     }
-    
+
 }
