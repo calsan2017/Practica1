@@ -25,7 +25,8 @@ public class CalculaNominas {
             escribe(empleado, empleado1, no);
             calc.readText("empleados.txt");
             actualizarTxt();
-            //conexion.getConexion();
+            conexion.getConexion();
+            mostrarEmpleadosBD();
 
         }catch (DatosNoCorrectosException e){
             System.out.println(e.getMessage());
@@ -58,6 +59,31 @@ public class CalculaNominas {
         empleado1.Imprimir();
         System.out.println("Nomina empleado 2: " + no.sueldo(empleado1));
 
+    }
+
+    public static void mostrarEmpleadosBD() {
+
+        String sql = "SELECT Nombre, Dni, Sexo, Categoria, Anios FROM empleados";
+
+        try (Statement st = conexion.getConexion().createStatement();
+             ResultSet rs = st.executeQuery(sql)) {
+
+            System.out.println("Empleados en la base de datos:");
+
+            while (rs.next()) {
+                String nombre = rs.getString("Nombre");
+                String dni = rs.getString("Dni");
+                String sexo = rs.getString("Sexo");
+                int categoria = rs.getInt("Categoria");
+                int anyos = rs.getInt("Anios");
+
+                System.out.println(nombre + " | " + dni + " | " + sexo
+                        + " | Categoría: " + categoria + " | Años: " + anyos);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al consultar los empleados: " + e.getMessage());
+        }
     }
 
     public static void actualizarTxt(){
