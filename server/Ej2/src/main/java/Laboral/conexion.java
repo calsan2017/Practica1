@@ -14,9 +14,9 @@ import java.sql.*;
  */
 public class conexion {
 
-     private static final String URL      = "jdbc:mariadb://localhost:3306/gestion_nominas";
+     private static final String URL      = "jdbc:mariadb://localhost:3306/empleados";
     private static final String USUARIO  = "root";
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "usuario";
 
   //  private static  String;
     private static Connection conexion = null;
