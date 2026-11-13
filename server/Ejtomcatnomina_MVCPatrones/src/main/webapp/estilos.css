@@ -1,0 +1,226 @@
+/* Estilos generales de la aplicación de gestión de nóminas */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #eaf1f8, #f5f7fa);
+    color: #263445;
+    margin: 0;
+    min-height: 100vh;
+    padding: 25px 15px;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1050px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    border-top: 5px solid #287c8e;
+    box-shadow: 0 8px 25px rgba(31, 55, 78, 0.10);
+}
+
+h1 {
+    color: #203e5c;
+    font-size: 28px;
+    margin: 0 0 18px;
+}
+
+h1::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    margin-top: 12px;
+    background: #287c8e;
+    border-radius: 3px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    height: 100%;
+    padding: 20px;
+    color: #244968;
+    background: #f3f7fa;
+    border: 1px solid #dce6ee;
+    border-left: 4px solid #287c8e;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.menu a:hover {
+    background: #e7f2f4;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(31, 55, 78, 0.09);
+}
+
+a {
+    color: #176b82;
+}
+
+a:hover {
+    color: #104b5b;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 460px;
+    margin-top: 22px;
+}
+
+label {
+    color: #34495e;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 11px 12px;
+    font-size: 1em;
+    color: #263445;
+    background: #fff;
+    border: 1px solid #cbd6df;
+    border-radius: 6px;
+    outline: none;
+}
+
+input[readonly] {
+    background: #eef2f5;
+    color: #657384;
+    cursor: not-allowed;
+}
+
+input:focus,
+select:focus {
+    border-color: #287c8e;
+    box-shadow: 0 0 0 3px rgba(40, 124, 142, 0.13);
+}
+
+button,
+.boton {
+    display: inline-block;
+    width: fit-content;
+    background: #244968;
+    color: #ffffff;
+    border: 0;
+    border-radius: 6px;
+    padding: 11px 17px;
+    margin-top: 8px;
+    text-decoration: none;
+    font-size: 0.95em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover,
+.boton:hover {
+    background: #287c8e;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 22px;
+    background: #ffffff;
+    font-size: 0.95em;
+}
+
+th,
+td {
+    border-bottom: 1px solid #e1e8ee;
+    padding: 13px 12px;
+    text-align: left;
+}
+
+th {
+    background: #244968;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background: #f5f8fa;
+}
+
+tbody tr:hover {
+    background: #eaf3f5;
+}
+
+td .boton {
+    margin: 0;
+    padding: 8px 12px;
+    white-space: nowrap;
+}
+
+.mensaje {
+    padding: 14px 16px;
+    background: #fff6df;
+    border: 1px solid #ead39a;
+    border-left: 4px solid #d5a536;
+    border-radius: 6px;
+    color: #684f17;
+}
+
+.tabla-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 10px;
+    }
+
+    .contenedor {
+        width: 100%;
+        margin: 10px auto;
+        padding: 22px 17px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        min-width: 650px;
+    }
+
+    button,
+    .boton {
+        max-width: 100%;
+    }
+}
